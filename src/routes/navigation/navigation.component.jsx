@@ -10,11 +10,10 @@ import { UserContext } from "../../contexts/user.context";
 import { signOut } from "firebase/auth";
 
 const Navigation = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
 
   const signOutHandler = async () => {
     await signOutUser();
-    setCurrentUser(null);
   }
 
   return (
