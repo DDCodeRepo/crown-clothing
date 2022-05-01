@@ -7,7 +7,6 @@ export const UserContext = createContext({
 });
 
 export const UserProvider = ({ children }) => {
-  console.log("HIITT");
   const [currentUser, setCurrentUser] = useState(null);
   const value = { currentUser, setCurrentUser };
 
@@ -15,8 +14,6 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
       const unsubcribe = onAuthStateChangedListener((user) => {
-          console.log("USER CONTEXT::",user);
-
           if(user){
             createUserDocumentFromAuth(user);
           }
