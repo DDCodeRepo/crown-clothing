@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 
-import { addCartItem, removeCartItem, clearCartItem } from '../utils/utility_methods/cart.utility';
+import { addCartItem, removeCartItem, clearCartItem } from '../cart-context/cart.utils';
 
 export const CartContext = createContext({
   isCartOpen: false,
@@ -57,5 +57,6 @@ export const CartProvider = ({ children }) => {
     cartCount,
     cartTotal
   };
+  
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
